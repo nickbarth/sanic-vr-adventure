@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/aframe/0.5.0/aframe.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/aframe-extras@3.13.1/dist/aframe-extras.js"></script>
+  </head>
+  <body>
+    <iframe width="1" height="1" src="https://www.youtube.com/embed/VTHsOSGJHN0?rel=0&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <a-scene>
+
+      <a-entity position="0 0 -20">
+        <a-entity position="0 0 -10">
+          <a-entity scale="1 1 1" position="0 2 0" rotation="0 -90 0" animation-mixer="clip: Walk" json-model="src: url(sanic.json);">
+            <a-animation attribute="rotation" dur="2000" fill="none" easing="linear" to="360 -90 0" repeat="indefinite"></a-animation>
+          </a-entity>
+          <a-entity scale="1 1 1" position="12 5 0" rotation="0 -170 0" json-model="src: url(egg.json);">
+            <a-animation delay="100" attribute="position" direction="alternate" dur="1000" fill="forwards" easing="ease-in-out" to="5 4 -2" repeat="indefinite"></a-animation>
+            <a-animation delay="2000" attribute="rotation" dur="2000" fill="forwards" to="360 -170 0" easing="ease-in-out" repeat="indefinite"></a-animation>
+            <a-animation delay="4000" attribute="rotation" dur="2000" fill="forwards" to="-360 -170 0" easing="ease-in-out" repeat="indefinite"></a-animation>
+          </a-entity>
+        </a-entity>
+
+        <a-animation attribute="rotation" dur="4000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
+        <a-camera position="0 1 1"></a-camera>
+      </a-entity>
+
+
+      <a-entity position="0 2 -15">
+        <a-torus color="yellow" radius="1"></a-torus>
+        <a-animation attribute="rotation" dur="500" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
+      </a-entity>
+
+
+      <a-sky src="url(sky.png)" rotation="0 -90 0"></a-sky>
+
+      <a-entity
+      geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+      material="src: url(grass.png); repeat: 512 512; metalness:0.5; sphericalEnvMap: #sky;"></a-entity>
+
+      <a-entity light="color: white; type: ambient;"></a-entity>
+
+    </a-scene>
+  <body>
+</html>

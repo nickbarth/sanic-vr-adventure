@@ -25,10 +25,12 @@
       </a-entity>
 
 
-      <a-entity position="0 2 -15">
-        <a-torus color="yellow" radius="1"></a-torus>
-        <a-animation attribute="rotation" dur="500" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-      </a-entity>
+      <a-light type="point" color="white" intensity="0.2" position="0 2 -15">
+        <a-entity position="0 0 0">
+          <a-torus color="yellow" radius="1"></a-torus>
+          <a-animation attribute="rotation" dur="500" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-light>
 
 
       <a-sky src="url(sky.png)" rotation="0 -90 0"></a-sky>
@@ -37,7 +39,7 @@
       geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
       material="src: url(grass.png); repeat: 512 512; metalness:0.5; sphericalEnvMap: #sky;"></a-entity>
 
-      <a-entity light="color: white; type: ambient;"></a-entity>
+      <a-light type="ambient" color="white" intensity="1.3"><a-light>
 
     </a-scene>
   <body>
